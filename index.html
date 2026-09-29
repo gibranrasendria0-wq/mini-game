@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS // Cyber Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <div>
+          <p>RPS // SYSTEM</p>
+          <h1>CYBER ARENA</h1>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="status-light"></span>
+        ONLINE
+      </div>
+    </header>
+
+    <section class="mode-panel">
+      <div>
+        <span class="eyebrow">GAME MODE</span>
+        <h2>SELECT DIFFICULTY</h2>
+      </div>
+
+      <div class="difficulty-list">
+        <button class="difficulty-btn active" data-level="easy">
+          <span class="mode-number">01</span>
+          <span>
+            <strong>EASY</strong>
+            <small>RANDOM AI</small>
+          </span>
+        </button>
+
+        <button class="difficulty-btn" data-level="normal">
+          <span class="mode-number">02</span>
+          <span>
+            <strong>NORMAL</strong>
+            <small>40% COUNTER</small>
+          </span>
+        </button>
+
+        <button class="difficulty-btn" data-level="hard">
+          <span class="mode-number">03</span>
+          <span>
+            <strong>HARD</strong>
+            <small>70% COUNTER</small>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="scoreboard">
+      <div class="fighter-score player">
+        <span class="fighter-label">PLAYER</span>
+        <strong id="playerScore">0</strong>
+      </div>
+
+      <div class="round-box">
+        <span>ROUND</span>
+        <strong id="roundText">1 / 5</strong>
+      </div>
+
+      <div class="fighter-score enemy">
+        <span class="fighter-label">CPU</span>
+        <strong id="computerScore">0</strong>
+      </div>
+    </section>
+
+    <section class="arena">
+      <div class="fighter-card">
+        <div class="card-top">
+          <span>YOU</span>
+          <span class="online-tag">P1</span>
+        </div>
+        <div class="choice-display player-display" id="playerChoice">?</div>
+        <p>PLAYER UNIT</p>
+      </div>
+
+      <div class="versus">
+        <span class="vs-line"></span>
+        <strong>VS</strong>
+        <span class="vs-line"></span>
+      </div>
+
+      <div class="fighter-card cpu-card">
+        <div class="card-top">
+          <span>CPU</span>
+          <span class="online-tag cpu-tag">AI</span>
+        </div>
+        <div class="choice-display cpu-display" id="computerChoice">?</div>
+        <p>AI UNIT</p>
+      </div>
+    </section>
+
+    <section class="result-box">
+      <span class="result-icon">◆</span>
+      <p id="result">CHOOSE YOUR WEAPON</p>
+      <span class="result-icon">◆</span>
+    </section>
+
+    <section class="weapons">
+      <div class="section-heading">
+        <span>YOUR LOADOUT</span>
+        <small>SELECT ONE</small>
+      </div>
+
+      <div class="choice-grid">
+        <button class="choice-btn rock" data-choice="rock">
+          <span class="weapon-icon">✊</span>
+          <strong>ROCK</strong>
+          <small>[ R ]</small>
+        </button>
+
+        <button class="choice-btn paper" data-choice="paper">
+          <span class="weapon-icon">🖐️</span>
+          <strong>PAPER</strong>
+          <small>[ P ]</small>
+        </button>
+
+        <button class="choice-btn scissors" data-choice="scissors">
+          <span class="weapon-icon">✌️</span>
+          <strong>SCISSORS</strong>
+          <small>[ S ]</small>
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <button class="reset-btn" id="resetBtn">↻ RESET MATCH</button>
+      <span id="levelLabel">MODE: EASY // BEST OF 5</span>
+    </footer>
+  </main>
+
+  <div class="modal hidden" id="gameOverModal">
+    <div class="modal-card">
+      <span class="modal-kicker">MATCH COMPLETE</span>
+      <h2 id="finalTitle">YOU WIN</h2>
+      <div class="final-score" id="finalScore">3 - 1</div>
+      <p>THE ARENA HAS SPOKEN.</p>
+      <button id="playAgainBtn">PLAY AGAIN <span>↻</span></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
